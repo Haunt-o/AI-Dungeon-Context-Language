@@ -164,6 +164,9 @@ notes that I find work and may make things easier for the AI:
 	  [Mark]
 	  > Mark is friends with you.
 	  ```
+	
+	- Make sure to end your sentences with a period. It's just a small thing
+	  to prevent the AI from potentially combining two notes in a weird way.
 
 ### Author's Notes
 
@@ -198,7 +201,7 @@ format comes together, here's a full bit of context for a scenario:
 [You]
 > You are named Jim.
 > You are male.
-> You are cool
+> You are cool.
 >| You have lots of friends.
 >? You have not watched Die Hard.
 
