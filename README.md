@@ -16,7 +16,13 @@
 
 Through use and testing, I have found this format to be effective and useful
 for developing and playing scenarios.  
-HCL should strike a good balance between being usable by both players and AI.
+Compared to plain prose, this format has given pretty good results on having
+the AI follow my intentions for how a scenario should work; the AI has been
+consistent with the context info while also expanding on it in reasonable ways
+to make different playthroughs different.
+
+Overall, HCL should strike a good balance between being usable by both players
+and AI.  
 
 ### Historical Notes
 
