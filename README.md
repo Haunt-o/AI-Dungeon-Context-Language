@@ -69,7 +69,7 @@ should be treated to yourself and players of your scenario.
 
 - **Nested Info Marker**
 	- When you have context info that is related to another piece of info — a
-	  sort of "sub-context" info — you put a `>|` to mark info as being part
+	  sort of "sub-context" info — you add a `|` to mark info as being part
 	  of the info above it.  
 	  For example:
 		```
