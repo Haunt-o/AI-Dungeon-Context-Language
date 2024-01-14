@@ -1,3 +1,7 @@
+<p align="center">
+	<img src="./hcl.jpg"/>
+</p>
+
 # Haunto Context Language
 
  My personal format for AI Dungeon scenario context,
