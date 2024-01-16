@@ -1,1 +1,0 @@
-# Haunto Context Language: Story Info

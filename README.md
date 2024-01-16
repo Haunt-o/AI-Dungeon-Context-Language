@@ -4,15 +4,15 @@
 
 # Haunto Context Language
 
- My personal format for AI Dungeon scenario context,
- Haunto Context Language — aka HCL — is something I developed to make
- creating scenarios simpler and more consistent.
+My personal format for AI Dungeon scenario context,
+Haunto Context Language — aka HCL — is something I developed to make
+creating scenarios simpler and more consistent.
 
- For AI Dungeon, you can type your context however you want, but I find that
- having a structured, consistent way of formatting it makes things easier for
- both you and anyone who wants to edit your context.  
- Everything is nice and organized, and you can easily add or delete bits of
- context as you need to.
+For AI Dungeon, you can type your context however you want, but I find that
+having a structured, consistent way of formatting it makes things easier for
+both you and anyone who wants to edit your context.  
+Everything is nice and organized, and you can easily add or delete bits of
+context as you need to.
 
 Through use and testing, I have found this format to be effective and useful
 for developing and playing scenarios.  
@@ -30,7 +30,7 @@ In the ancient AI Dungeon year of 2020, a lot of research was done on various
 methods of providing context and information to the AI, with multiple formats
 invented and tested.  
 AI Dungeon veterans may remember formats designed to optimize world info, 
-such as Zalty's or Caveman.
+such as Zaltys or Caveman.
 
 While the passage of time — changing the AI models and how AI Dungeon works —
 throws things more up in the air on the specifics of this old research, the
@@ -39,12 +39,17 @@ design of HCL mirrors some general strategies used.
 While looking different, on tokenization by the AI, HCL should actually resemble
 a sort of less condensed mixture of these older formats.
 
-### Story Info
+### Story Cards
 
-For using a subset of HCL for story info, see
-[the page on it](https://github.com/Haunt-o/Haunto-Context-Language/blob/main/STORY_INFO.md)  
-Since you have to cram story info into 1000 character to describe the details
-and features of something, HCL is written differently for story info.
+For using HCL for story cards, see
+[the page on it](https://github.com/Haunt-o/Haunto-Context-Language/blob/main/STORY_CARD.md)  
+Since you have to cram story card info into ~1000 characters to describe the
+details and features of something, HCL is written differently for story cards.
+
+I have done a lot of testing and research to make sure HCL is a worthwhile
+format to use for story cards as well.  
+It is space efficient, effective, and can be written in an intuitive and easy
+to read manner.
 
 ## Table of Contents
 - [Headers](#headers)
@@ -154,7 +159,7 @@ notes that I, and others, find work and may make things easier for the AI:
 1) Keep each piece of information as direct and straightforward as possible.
 	- When an AI is fed too much text at once, its ability to keep track of
 	  everything at the same time starts to weaken.  
-	  While your context probably won't choke up the AI, it's good to be safe
+	  While your memory probably won't choke up the AI, it's good to be safe
 	  instead of sorry.  
 	  To help the AI, keep each individual note free of details or writing that
 	  is unnecessary. If you need to expand on an idea, use nested info markers
@@ -171,18 +176,18 @@ notes that I, and others, find work and may make things easier for the AI:
 		  > Jim green eye. Long hair.
 		  ```
 		  I wouldn't recommend this unless you have a large amount of
-		  context and are worried about it being long enough for the AI to
+		  memory and are worried about it being long enough for the AI to
 		  cut off or get confused about —
 		  part of the goal of HCL is to be a combination of effective for
 		  scenario creators and readable by scenario players.
 	
-	- Your context should not be just your intro story copy and pasted.  
+	- Your memory should not be just your intro story copy and pasted.  
 	  There's literally no point for that; AI Dungeon will just use your intro
-	  as context if you don't have your own.
+	  as memory if you don't have your own.
 
-	  Instead, your context should be a list of notes and details about the
+	  Instead, your memory should be a list of notes and details about the
 	  fundamental points of the story for your scenario. The intro story is the
-	  body, and the context should be a skeleton that allows the AI to keep
+	  body, and the memory should be a skeleton that allows the AI to keep
 	  the body moving in a way that fits.
 
 2) Remove as much ambiguity as possible.
@@ -229,7 +234,7 @@ notes that I, and others, find work and may make things easier for the AI:
 
 ### Author's Notes
 
-While not literally part of the context box, author's notes are lumped in
+While not literally part of the memory box, author's notes are lumped in
 with the context when passed to the AI, so there's also a format for them.
 
 Author's notes are surrounded with double brackets like:
@@ -248,7 +253,7 @@ Simply start a line with `!!!` and put all your variables separated by `::`:
 !!!${Your name?}::${Your gender?}::${Your age?}
 ```
 
-You can put this anywhere in your context, as long as it's on its own line.
+You can put this anywhere in your memory, as long as it's on its own line.
 
 &nbsp;
 
