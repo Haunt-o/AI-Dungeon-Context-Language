@@ -39,6 +39,13 @@ design of HCL mirrors some general strategies used.
 While looking different, on tokenization by the AI, HCL should actually resemble
 a sort of less condensed mixture of these older formats.
 
+### Story Info
+
+For using a subset of HCL for story info, see
+[the page on it](https://github.com/Haunt-o/Haunto-Context-Language/blob/main/STORY_INFO.md)  
+Since you have to cram story info into 1000 character to describe the details
+and features of something, HCL is written differently for story info.
+
 ## Table of Contents
 - [Headers](#headers)
 - [Info Markers](#info-markers)
