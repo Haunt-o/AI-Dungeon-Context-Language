@@ -100,7 +100,7 @@ Jim:[Anthro Wolf<Male/25y>;WEAR<Jim>:shirt<white>/jeans/boots<brown>;APPEAR<Jim>
 ```
 
 While the Zaltys is slightly more condensed, my testing shows that the HCL
-functions similarly with the benefit of being easier to ready and write.
+functions similarly with the benefit of being easier to read and write.
 
 ## Keywords
 
