@@ -1,11 +1,11 @@
 <p align="center">
-	<img src="./hcl.jpg"/>
+	<img src="./nacl.png"/>
 </p>
 
-# Haunto Context Language
+# Narrative Context Language
 
 My personal format for AI Dungeon scenario context,
-Haunto Context Language — aka HCL — is something I developed to make
+Narrative Context Language — aka NaCL — is something I developed to make
 creating scenarios simpler and more consistent.
 
 For AI Dungeon, you can type your context however you want, but I find that
@@ -21,7 +21,7 @@ the AI follow my intentions for how a scenario should work; the AI has been
 consistent with the context info while also expanding on it in reasonable ways
 to make different playthroughs different.
 
-Overall, HCL should strike a good balance between being usable by both players
+Overall, NaCL should strike a good balance between being usable by both players
 and AI.  
 
 ### Historical Notes
@@ -34,19 +34,19 @@ such as Zaltys or Caveman.
 
 While the passage of time — changing the AI models and how AI Dungeon works —
 throws things more up in the air on the specifics of this old research, the
-design of HCL mirrors some general strategies used.
+design of NaCL mirrors some general strategies used.
 
-While looking different, on tokenization by the AI, HCL should actually resemble
+While looking different, on tokenization by the AI, NaCL should actually resemble
 a sort of less condensed mixture of these older formats.
 
 ### Story Cards
 
-For using HCL for story cards, see
+For using NaCL for story cards, see
 [the page on it](https://github.com/Haunt-o/Haunto-Context-Language/blob/main/STORY_CARD.md)  
 Since you have to cram story card info into ~1000 characters to describe the
-details and features of something, HCL is written differently for story cards.
+details and features of something, NaCL is written differently for story cards.
 
-I have done a lot of testing and research to make sure HCL is a worthwhile
+I have done a lot of testing and research to make sure NaCL is a worthwhile
 format to use for story cards as well.  
 It is space efficient, effective, and can be written in an intuitive and easy
 to read manner.
@@ -57,7 +57,7 @@ to read manner.
 - [Good Practices](#good-practices)
 - [Author's Notes](#authors-notes)
 - [API Variables](#api-variables)
-- [Full HCL Example](#full-hcl-example)
+- [Full NaCL Example](#full-nacl-example)
 
  ## Format
 
@@ -96,7 +96,7 @@ For example:
 ```
 
 You can just use headers and regular info markers, and have 90% of the benefits
-of HCL, but there are a couple extra varieties of info markers to help
+of NaCL, but there are a couple extra varieties of info markers to help
 organize your context information and give hints on how the information
 should be treated to yourself and players of your scenario.
 
@@ -167,7 +167,7 @@ notes that I, and others, find work and may make things easier for the AI:
 	
 		- If it works for you, a "Caveman" strategy could work, where you just 
 		  completely remove all uneeded words.  
-		  For example, here's a normal piece of HCL:
+		  For example, here's a normal piece of NaCL:
 		  ```
 		  > Jim has green eyes and long hair.
 		  ```
@@ -178,7 +178,7 @@ notes that I, and others, find work and may make things easier for the AI:
 		  I wouldn't recommend this unless you have a large amount of
 		  memory and are worried about it being long enough for the AI to
 		  cut off or get confused about —
-		  part of the goal of HCL is to be a combination of effective for
+		  part of the goal of NaCL is to be a combination of effective for
 		  scenario creators and readable by scenario players.
 	
 	- Your memory should not be just your intro story copy and pasted.  
@@ -246,7 +246,7 @@ Author's notes are surrounded with double brackets like:
 ### API Variables
 
 If you use my AI Dungeon Scenario Scripting API, then there's an additional
-bit of HCL you can use to feed the script a list of your scenario variables.
+bit of NaCL you can use to feed the script a list of your scenario variables.
 
 Simply start a line with `!!!` and put all your variables separated by `::`:
 ```
@@ -257,9 +257,9 @@ You can put this anywhere in your memory, as long as it's on its own line.
 
 &nbsp;
 
-### Full HCL Example
+### Full NaCL Example
 
-If the individual examples don't give you a good grasp on how all of the HCL
+If the individual examples don't give you a good grasp on how all of the NaCL
 format comes together, here's a full bit of context for a scenario:
 ```
 [You]

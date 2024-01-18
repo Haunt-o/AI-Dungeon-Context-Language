@@ -1,6 +1,6 @@
-# Haunto Context Language: Story Cards
+# Narrative Context Language: Story Cards
 
-While HCL focuses on having structure to make the memory and author's notes
+While NaCL focuses on having structure to make the memory and author's notes
 easily usable by players and the AI, there's a different focus when it comes to
 story cards.
 
@@ -20,7 +20,7 @@ on various strategies to conserve space and notes on how the AI processes
 context. While a lot of time has passed, meaning that the exact functionality of
 the AI(s) has changed, the general findings from the research still work.
 
-For story cards, HCL uses general strategies from some popular formats (Zaltys
+For story cards, NaCL uses general strategies from some popular formats (Zaltys
 and Caveman) to provide formatted story card info that is optimized for space,
 readability, and ease of use.
 
@@ -34,7 +34,7 @@ readability, and ease of use.
 - [Examples](#examples)
 
 ## Format
-For story cards, HCL follows a similar base format that it uses for writing
+For story cards, NaCL follows a similar base format that it uses for writing
 story memory: you have a header like `[Thing]` and each piece of information
 on a line starting with a `>` and ending with a period.
 
@@ -94,12 +94,12 @@ He has an average build with grey fur, and commonly wears a white shirt, jeans, 
 Jim is friends with you and Naomi. If defeated, Jim will drop his phone.
 ```
 
-The HCL comes close to an optimized Zaltys equivalent, which has 181 characters:
+The NaCL comes close to an optimized Zaltys equivalent, which has 181 characters:
 ```
 Jim:[Anthro Wolf<Male/25y>;WEAR<Jim>:shirt<white>/jeans/boots<brown>;APPEAR<Jim>:average/fur<grey>;MIND<Jim>:depressed;DIET<Jim>:pizza/salad;FRIENDS<Jim>:you/naomi;LOOT<Jim>:phone.]
 ```
 
-While the Zaltys is slightly more condensed, my testing shows that the HCL
+While the Zaltys is slightly more condensed, my testing shows that the NaCL
 functions similarly with the benefit of being easier to read and write.
 
 ## Keywords
@@ -189,7 +189,7 @@ This list is just keywords that were noted to be effective and consistent.
 
 ## Additional Options
 If you wish to have slightly more technical syntax that may provide some slight
-benefits when using HCL, here are some optional pieces of additional syntax:
+benefits when using NaCL, here are some optional pieces of additional syntax:
 
 1) List grouping
 	- When making lists of things, placing the list within square brackets
@@ -248,10 +248,10 @@ benefits when using HCL, here are some optional pieces of additional syntax:
 
 ## Examples
 For the purpose of helping learn how the format and keywords work, here are
-several examples of story cards and their corresponding HCL.
+several examples of story cards and their corresponding NaCL.
 
 #### Greenbriar Hills
-This is an HCL adaptation of a location example of Zaltys format from the
+This is an NaCL adaptation of a location example of Zaltys format from the
 World Info Research
 Sheet:
 ```
@@ -265,7 +265,7 @@ Sheet:
 > LIFE varied; giant lizards(in river); crested birds.
 > THRE wolves(minor).
 ```
-On testing, this HCL story card is effective like the Zaltys version, and
+On testing, this NaCL story card is effective like the Zaltys version, and
 actually more condensed (even without full optimization) at 406 characters vs.
 the 437 of the Zaltys version.
 
@@ -310,7 +310,7 @@ used to showcase the condensed Snek format:
 ```
 
 At 505 characters, this is very close to the optimized Snek format version of
-496 chars, which is impressive considering I actually expanded the HCL with more
+496 chars, which is impressive considering I actually expanded the NaCL with more
 keywords to add clarity.
 
 For reference, the Snek version:
@@ -318,5 +318,5 @@ For reference, the Snek version:
 Mike Haggar:[Human<male/202cm/140kg>;APPE<Haggar>:Stocky&muscular/bigarms/brown<shorthair&mustache>;MIND<Haggar>:Just/direct/upbeat/hardy/upright;WEAR:Eyeglasses<at work>/brownboots&greenpants/bandolier;SUMM<Haggar>:Born 1943/from:<Final Fight&Street Fighter> games/ex:prowrestler/grew up on streets<in Metro City>/mayor<Metro City>/fought gangs:<Mad Gear&Skull Cross>/fights gangs/"It's my job to keep Metro City safe!"/loves:curry&rice/friends:<Cody&Guy&Carlos:from Brazil>/daughter:<Jessica>.]
 ```
 
-On testing, the HCL worked well, with Mike Haggar referencing all the details
+On testing, the NaCL worked well, with Mike Haggar referencing all the details
 listed for him during a conversation.
