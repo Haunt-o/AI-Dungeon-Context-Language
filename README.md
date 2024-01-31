@@ -237,23 +237,90 @@ notes that I, and others, find work and may make things easier for the AI:
 While not literally part of the memory box, author's notes are lumped in
 with the context when passed to the AI, so there's also a format for them.
 
-Author's notes are surrounded with double brackets like:
+Authors notes use the following 4-letter keywords to convey writing information:
+| Keyword 	|       Meaning       	|                Examples                	|
+|:-------:	|:--------------------	|:---------------------------------------	|
+|   STYL  	| Writing Style       	| verbose, talkative, romantic, arousing 	|
+|   GENR  	| Genre for Story     	| comedy, romance, horror                	|
+|   TONE  	| Tone of Story       	| depressing, tragic, upbeat             	|
+|   RTNG  	| Rating of story     	| PG, PG-13, M, R, X-RATED               	|
+|   THEM  	| Theming of Story    	| fantasy, sci-fi, western               	|
+|   NOTE  	| Misc. Writing Notes 	| Literally anything                        |
+
+See [this resource](https://justpaste.it/9ofj1) on words to use with author's
+notes and their effects to get a good idea on words to use with the keywords
+(while the page says it's outdated, my testing finds it still works pretty
+well for AI Dungeon).
+
+Each keyword, and the words for them, goes on its own line starting with `>`
+and ending with a period.    
+
+For example, let's say we want author's note for a story with the following
+criteria:
+- Fantasy world
+- Romance story
+- Potential for good NSFW content
+- AI tries to be realistic and creative for the general fantasy content
+
+Some good author's notes in NaCL format would be:
 ```
-[[ Write a cool story. ]]
+>RTNG R-RATED.
+>GENR romance.
+>STYL verbose, talkative, romantic, arousing, inventive, realistic.
+>THEM fantasy.
 ```
+
+An explanation of each line:
+- `>RTNG R-RATED.`
+	- This sets the rating to an adult rating that shouldn't shy away from
+	  NSFW content, if that's where the story goes. Could also use `X-RATED`
+	  for a higher amount of NSFW.
+- `>GENR romance.`
+	- This is fairly straightforward, as the genre is romance.
+- `>STYL verbose, talkative, romantic, arousing, inventive, realistic.`
+	- This is a bit more complex:
+		- "Verbose" hints for the AI to be more descriptive with more dialogue.
+		- "Talkative" hints to add more dialogue, focusing on smalltalk for
+		  a better "slice of life" feel to the slower portions of the story.
+		- "Romantic" is straightforward, matching the genre.
+		- "Arousing" is a good hint for general NSFW content, as it hints for
+		  the AI to slow down during NSFW scenes and be more descriptive.
+		  Normally it's like the AI might try to speedrun NSFW scenes, so this
+		  helps keep their pace in line with the rest of the story.
+		- "Inventive" is a good hint for stories that can have action; as the
+		  word says, the AI will try to be more inventive and creative with
+		  how things play out. Instead of a dodge, a character may pull a
+		  dextrous maneuver using their skills.
+		- "Realistic" hints to keep character actions, well, realistic and a
+		  little more intelligent. Instead of rushing into a fight, the AI
+		  may have them sneak around to gain advantage.
+- `>THEM fantasy.`
+	- Straightforward; this signals that the story has a fantasy theme to it.
+
+&nbsp;
+
+As a note, the example author's notes clocks in at a relatively small 112
+characters but conveys all of the information above to the AI in a generally
+effective manner.
+
 &nbsp;
 
 ### API Variables
 
-If you use my AI Dungeon Scenario Scripting API, then there's an additional
+If you use my AI Dungeon Scripting API, SALT, then there's an additional
 bit of NaCL you can use to feed the script a list of your scenario variables.
 
-Simply start a line with `!!!` and put all your variables separated by `::`:
+Simply add a `[[Variables]]` section, with a line containing all the variables
+you want to give to your script with the API (separated by `::`s).
+
 ```
-!!!${Your name?}::${Your gender?}::${Your age?}
+[[Variables]]
+${Your name?}::${Your gender?}::${Your age?}
 ```
 
 You can put this anywhere in your memory, as long as it's on its own line.
+If you check out the SALT API, there's ways to edit what comes before the
+variables, if you want a different format for your own uses.
 
 &nbsp;
 
