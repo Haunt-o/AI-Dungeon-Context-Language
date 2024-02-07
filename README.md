@@ -95,61 +95,27 @@ For example:
 > You are cool.
 ```
 
-You can just use headers and regular info markers, and have 90% of the benefits
-of NaCL, but there are a couple extra varieties of info markers to help
-organize your context information and give hints on how the information
-should be treated to yourself and players of your scenario.
+#### Nested Info Marker
 
-- **Additional Info Marker**
-	- When you have additional context info you want to put in addition to what
-	  is set in the base scenario info, you add additional `>`s, like `>>`.  
-	  For example:
-		```
-		> You work at the local coffee shop.
-		>> You have adopted a dog.
-		```
-	- You can add more `>`s, and each additional one implies a lower time
-	  frame for the information.
-	  	- `>` means base, unchanging information about something.
-		- `>>` means plot or post-intro information.
-		- `>>>` means temporary information.
-		- `>>>>` means short-term, soon-to-change information.
-
-- **Nested Info Marker**
-	- When you have context info that is related to another piece of info — a
-	  sort of "sub-context" info — you add a `|` to mark info as being part
-	  of the info above it.  
-	  For example:
-		```
-		> You are cool.
-		>| You wear cool shades.
-		```
-	- If you have nested info on your nested info, just put another `|` at the
-	  end, like `>||`.  
-	  For example:
-	  ```
-	  > You are cool.
-	  >| You wear cool shades.
-	  >|| Your cool shades are made of coolium.
-	  ```
-
-- **Conditional Info Marker**
-	- If you want to mark a piece of context info as optional or potentially
-	  removable depending on some condition, you can put a `?` like `>?`.  
-	  For example:
-	  ```
-	  > You are cool.
-	  >? You don't have any friends.
-	  ```
-
-&nbsp;
-
-You can combine different kinds of markers as needed; if you need to, you can
-make a conditional nested info marker like:
+When you have context info that is related to another piece of info — a
+sort of "sub-context" info — you add a `|` to mark info as being part
+of the info above it.  
+For example:
 ```
 > You are cool.
->|? People don't recognize how cool you are.
+>| You wear cool shades.
 ```
+
+If you have nested info on your nested info, just put another `|` at the
+end, like `>||`.  
+For example:
+```
+> You are cool.
+>| You wear cool shades.
+>|| Your cool shades are made of coolium.
+```
+
+&nbsp;
 
 ### Good Practices
 
@@ -186,7 +152,7 @@ notes that I, and others, find work and may make things easier for the AI:
 	  as memory if you don't have your own.
 
 	  Instead, your memory should be a list of notes and details about the
-	  fundamental points of the story for your scenario. The intro story is the
+	  fundamental points of your scenario. The intro story is the
 	  body, and the memory should be a skeleton that allows the AI to keep
 	  the body moving in a way that fits.
 
@@ -231,6 +197,19 @@ notes that I, and others, find work and may make things easier for the AI:
 	
 	- Make sure to end your sentences with a period. It's just a small thing
 	  to prevent the AI from potentially combining two notes in a weird way.
+	
+3) Consider what needs to be a put in the memory.
+	- Memory should, as mentioned before, be a skeleton for the fundamental
+	  details of your story.  
+	  Unless your scenario is outright intended to be short, it'd be better to
+	  not put temporary details about the start of your story in it.
+	  The memory is always referenced, so the AI could get confused and think
+	  details about the start of the story are still in play even when the
+	  player is way past the start.
+	- Immutable details are good for memory, like a character's race and name.  
+	  Even then, details other than the basics should be put into a story card
+	  if you can; see [the section on story cards](#story-cards) to see how to
+	  use NaCL to write story cards effectively.
 
 ### Author's Notes
 
@@ -310,12 +289,10 @@ effective manner.
 If you use my AI Dungeon Scripting API, SALT, then there's an additional
 bit of NaCL you can use to feed the script a list of your scenario variables.
 
-Simply add a `[[Variables]]` section, with a line containing all the variables
-you want to give to your script with the API (separated by `::`s).
-
+Simply add a line starting with a `!!!`, with a list of the variables you want
+to give to your script separated by `::`.
 ```
-[[Variables]]
-${Your name?}::${Your gender?}::${Your age?}
+!!!${Your name?}::${Your gender?}::${Your age?}
 ```
 
 You can put this anywhere in your memory, as long as it's on its own line.
@@ -334,26 +311,22 @@ format comes together, here's a full bit of context for a scenario:
 > You are male.
 > You are cool.
 >| You have lots of friends.
->? You have not watched Die Hard.
+> You have not watched die hard.
 
 [Mark]
 > Mark is male.
 > Mark is your friend.
->? Mark is with you at the combination Pizza Hut and Taco Bell.
-
-||Setting||
->>? You are in a combination Pizza Hut and Taco Bell.
 
 ||Plot||
->> You learned some Spanish.
->> You learned some Italian.
->>> You have ordered a Doritos Locos Taco.
+> You learned some Spanish.
+> You learned some Italian.
+> You are craving a Doritos Locos Taco.
 ```
 
 Author's Notes:
 ```
-[[ Write a gripping thriller story about a man waiting for his order. ]]
-[[ Be descriptive about the interior of a combination Pizza Hut and Taco Bell. ]]
+>GENR thriller, adventure.
+>STYL descriptive, creative.
 ```
 
 &nbsp;
