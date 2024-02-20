@@ -62,7 +62,8 @@ For separating pieces of information on a line, you have several options:
 
 For each following detail about the story card item, a keyword will be used
 to specify what sort of information is being listed.  
-Note that the keyword is put together with the `>`.  
+Note that the keyword is put together with the `>` to help visually separate
+the beginning description line from the keyword ones.  
 To see the list of keywords, refer to the [keyword section](#keywords).
 
 As an example, let's say we have someone named Jim who:
