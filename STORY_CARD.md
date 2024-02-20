@@ -79,14 +79,14 @@ As an example, let's say we have someone named Jim who:
 [Jim]
 > Anthro wolf/male/25yr/5'6/160lbs.
 >WEAR white shirt, jeans, brown boots.
->APPEAR average build/grey fur.
+>APPEAR average/grey fur.
 >MIND depressed.
 >DIET pizza, salad.
 >FRIEND you, naomi.
 >LOOT phone.
 ```
 
-AI Dungeon reports this as 182 characters.  
+AI Dungeon reports this as 176 characters.  
 Compare this to straightforward prose, which clocks in at 340 characters:
 
 ```
@@ -101,8 +101,8 @@ The NaCL comes *very* close to an optimized Zaltys equivalent, which has 181 cha
 Jim:[Anthro Wolf<Male/25y>;WEAR<Jim>:shirt<white>/jeans/boots<brown>;APPEAR<Jim>:average/fur<grey>;MIND<Jim>:depressed;DIET<Jim>:pizza/salad;FRIENDS<Jim>:you/naomi;LOOT<Jim>:phone.]
 ```
 
-While the Zaltys is *barely* more condensed, my testing shows that the NaCL
-functions similarly with the benefit of being easier to read and write.
+My testing shows that the NaCL functions similarly with the benefit of being
+easier to read and write, while being slightly more condensed as well.
 
 ## Keywords
 
