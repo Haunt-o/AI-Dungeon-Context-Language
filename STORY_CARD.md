@@ -62,6 +62,7 @@ For separating pieces of information on a line, you have several options:
 
 For each following detail about the story card item, a keyword will be used
 to specify what sort of information is being listed.  
+Note that the keyword is put together with the `>`.  
 To see the list of keywords, refer to the [keyword section](#keywords).
 
 As an example, let's say we have someone named Jim who:
@@ -76,15 +77,15 @@ As an example, let's say we have someone named Jim who:
 ```
 [Jim]
 > Anthro wolf/male/25yr/5'6/160lbs.
-> WEAR white shirt, jeans, brown boots.
-> APPEAR average build/grey fur.
-> MIND depressed.
-> DIET pizza, salad.
-> FRIEND you, naomi.
-> LOOT phone.
+>WEAR white shirt, jeans, brown boots.
+>APPEAR average build/grey fur.
+>MIND depressed.
+>DIET pizza, salad.
+>FRIEND you, naomi.
+>LOOT phone.
 ```
 
-AI Dungeon reports this as 188 characters.  
+AI Dungeon reports this as 182 characters.  
 Compare this to straightforward prose, which clocks in at 340 characters:
 
 ```
@@ -94,12 +95,12 @@ He has an average build with grey fur, and commonly wears a white shirt, jeans, 
 Jim is friends with you and Naomi. If defeated, Jim will drop his phone.
 ```
 
-The NaCL comes close to an optimized Zaltys equivalent, which has 181 characters:
+The NaCL comes *very* close to an optimized Zaltys equivalent, which has 181 characters:
 ```
 Jim:[Anthro Wolf<Male/25y>;WEAR<Jim>:shirt<white>/jeans/boots<brown>;APPEAR<Jim>:average/fur<grey>;MIND<Jim>:depressed;DIET<Jim>:pizza/salad;FRIENDS<Jim>:you/naomi;LOOT<Jim>:phone.]
 ```
 
-While the Zaltys is slightly more condensed, my testing shows that the NaCL
+While the Zaltys is *barely* more condensed, my testing shows that the NaCL
 functions similarly with the benefit of being easier to read and write.
 
 ## Keywords
@@ -183,31 +184,39 @@ This list is just keywords that were noted to be effective and consistent.
 ### Series Info Keywords
 | Keyword 	| Alternative 	| Condensed 	| Functionality                         	|
 |---------	|-------------	|-----------	|---------------------------------------	|
-| THEME   	|             	|           	| The theme of a series.                	|
+| THEME   	|             	| THEM          	| The theme of a series.                	|
 | ORIGIN  	|             	|           	| The origin of something for a series. 	|
-| GENRE		|				|				| The genre of a series.					|
+| GENRE		|				| GENR				| The genre of a series.					|
 
 ## Additional Options
-If you wish to have slightly more technical syntax that may provide some slight
+If you wish to have slightly more technical syntax that may provide some
 benefits when using NaCL, here are some optional pieces of additional syntax:
 
 1) List grouping
 	- When making lists of things, placing the list within square brackets
 	  may help keep the items encapsulated together:
 	  ```
-	  > INV[marble, gum, slingshot].
+	  >INV[marble, gum, slingshot].
 	  ```
 2) Grouped Relation
 	- If you want to add a detail for a bit of info, you can use parentheses to
 	  describe the detail with it:
 	  ```
-	  > FEATURE flowing fiver("azure rapids").
+	  >FEATURE flowing river("azure rapids").
 	  ```
+	- Another example, that I use a lot:
+	  ```
+	  >APPE hair(long,brown)
+	  >WEAR black(shirt,pants)
+	  ```
+	  This one is pretty effective, with the AI correctly joining "long and brown"
+	  with "hair" and "black" with "shirt" and "pants".
+
 3) Direct implication
 	- You can put a colon after a keyword, which may help sell the assocation
 	  between the keyword and items following it:
 	  ```
-	  > WEAR: white shirt/shoes/jeans
+	  >WEAR:white shirt/shoes/jeans
 	  ```
 4) Full encapsulation
 	- If you're worried about the AI not associating your information with the
@@ -216,7 +225,7 @@ benefits when using NaCL, here are some optional pieces of additional syntax:
 	  ```
 	  [Steve] {
 	  > Human/male/5'9.
-	  > MIND energetic.
+	  >MIND energetic.
 	  }
 	  ```
 5) Symbolic Following
@@ -226,7 +235,7 @@ benefits when using NaCL, here are some optional pieces of additional syntax:
 	  ```
 	  [The Dry Expanse]
 	  > Hot arid desert.
-	  > EXIT SW => Great Oasis; E => Endless Desolation.
+	  >EXIT SW => Great Oasis; E => Endless Desolation.
 	  ```
 
 6) Multi-Word Connection
@@ -236,8 +245,8 @@ benefits when using NaCL, here are some optional pieces of additional syntax:
 	  ```
 	  [Jim]
 	  > Anthro_Wolf/male/25_years/5'6_tall/160lbs.
-	  > WEAR white_shirt, jeans, brown_boots
-	  > APPEAR average_build/grey_fur.
+	  >WEAR white_shirt, jeans, brown_boots
+	  >APPEAR average_build/grey_fur.
 	  ```
 	- Another strategy is smashing words together, like `FlamingOrangeEyes` for
 	  `Flaming Orange Eyes`, but this carries the risk of the AI chopping up
@@ -257,16 +266,16 @@ Sheet:
 ```
 [Greenbriar Hills]
 > hilly region.
-> CLIM temperate.
-> BIOME hilly forests; large river, East(SW from mountain).
-> EXIT NW to Yrthwood; E to The Sunless Basin; SW to Teeth of Gwahlur(mountain).
-> FEAT prickly plants; strange lights at night("Old Light").
-> NATIVE Lizardfolk(friendly); Halflings(prosperous village "Greenbriar").
-> LIFE varied; giant lizards(in river); crested birds.
-> THRE wolves(minor).
+>CLIM temperate.
+>BIOME hilly forests; large river, East(SW from mountain).
+>EXIT NW to Yrthwood; E to The Sunless Basin; SW to Teeth of Gwahlur(mountain).
+>FEAT prickly plants; strange lights at night("Old Light").
+>NATIVE Lizardfolk(friendly); Halflings(prosperous village "Greenbriar").
+>LIFE varied; giant lizards(in river); crested birds.
+>THRE wolves(minor).
 ```
 On testing, this NaCL story card is effective like the Zaltys version, and
-actually more condensed (even without full optimization) at 406 characters vs.
+actually more condensed (even without full optimization) at 399 characters vs.
 the 437 of the Zaltys version.
 
 The Zaltys example, for comparison:
@@ -280,11 +289,11 @@ called Siren:
 ```
 [Siren]
 > A popular drink.
-> APPEAR Sapphire colored/silver bubbles/sprig of mint/smells alcoholic/tastes like rust metal.
-> EFFECTS Inspires drinker to dance.
+>APPEAR Sapphire colored/silver bubbles/sprig of mint/smells alcoholic/tastes like rust metal.
+>EFFECT Inspires drinker to dance.
 ```
-Again, this is equivalent in effectiveness and slightly more space efficient
-(155 chars vs 169).
+Again, this is equivalent in effectiveness and a bit more space efficient
+(156 chars vs 169).
 
 For reference, the Zaltys example:
 ```
@@ -299,19 +308,20 @@ used to showcase the condensed Snek format:
 ```
 [Mike Haggar]
 > Human/male/202cm/140kg.
-> APPE Stocky&muscular/big args/short_brown_hair & brown_mustache.
-> MIND Just/direct/hardy/upright.
-> WEAR Eyeglasses(at work)/brown_boots&green_pants/bandolier.
-> SUMM[Born 1943/from games Final_Fight&Street_Fighter/pro_wrestler("ex")/grew up on streets of Metro City/Mayor of Metro City/fought_gangs(Mad_Gear&Skull_Cross)/fights gangs].
-> LIKE curry&rice.
-> QUOTE "It's my job to keep Metro City safe!".
-> FRIEND Cody&Guy&Carlos(from Brazil).
-> DAUGHTER Jessica.
+>APPE Stocky&muscular/big args/short_brown_hair & brown_mustache.
+>MIND Just/direct/hardy/upright.
+>WEAR Eyeglasses(at work)/brown_boots&green_pants/bandolier.
+>SUMM Born 1943/from games Final_Fight&Street_Fighter/pro_wrestler(ex)/grew up on streets of Metro City/Mayor of Metro City/fought_gangs(Mad_Gear&Skull_Cross)/fights gangs.
+>LIKE curry&rice.
+>QUOTE "It's my job to keep Metro City safe!".
+>FRIEND Cody&Guy&Carlos(from Brazil).
+>DAUGHTER Jessica.
 ```
 
-At 505 characters, this is very close to the optimized Snek format version of
-496 chars, which is impressive considering I actually expanded the NaCL with more
-keywords to add clarity.
+At 494 characters, this is *slightly smaller* than the optimized Snek format
+version of 496 chars, which is impressive considering I actually expanded the
+NaCL with more keywords to add clarity. A fully optimized NaCL could be
+smaller.
 
 For reference, the Snek version:
 ```
